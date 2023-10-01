@@ -24,7 +24,7 @@ run-image:
 run-zombie:
 	docker exec -t pid1rs zombie
 
-# Test
+# Build and run test container
 test: build-image
 	docker rm pid1rs || exit 0
 	docker run --name pid1rs -t pid1rstest
