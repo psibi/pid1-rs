@@ -56,6 +56,8 @@ jobs:
         cd pid1 && just test
       if: runner.os == 'Linux'
     - name: pid1 Image tests
+      # https://github.com/gfx/example-github-actions-with-tty
+      shell: 'script -q -e -c "bash {0}"'
       run: |
         just test-init-image
       if: runner.os == 'Linux'
