@@ -13,7 +13,7 @@ test: build-release-binary
 
 # Test docker image
 test-init-image:
-	docker run --rm--cpus 1 --memory 512MB --stop-timeout 2 --tty --name=pid pid1runner ps aux
+	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name=pid pid1runner ps aux
 	-docker wait pid
 	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name pid pid1runner ls
 	-docker wait pid
