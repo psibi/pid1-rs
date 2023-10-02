@@ -48,7 +48,7 @@ jobs:
     - name: Build other binaryies
       run: just binaries
     - name: Generate artifacts
-      run: just cp-binaries
+      run: just cp-binaries true
     - uses: actions/upload-artifact@v3
       with:
         name: binaries
