@@ -38,7 +38,7 @@ binaries clean='false':
 	cross build --target i686-unknown-linux-musl --release
 	{{clean}} && docker image rm ghcr.io/cross-rs/x86_64-unknown-linux-gnu:0.2.5
 	{{clean}} && docker image rm ghcr.io/cross-rs/aarch64-unknown-linux-gnu:0.2.5
-	{{clean}} && docker iamge rm ghcr.io/cross-rs/aarch64-unknown-linux-musl:0.2.5
+	{{clean}} && docker image rm ghcr.io/cross-rs/aarch64-unknown-linux-musl:0.2.5
 	{{clean}} && docker image rm ghcr.io/cross-rs/arm-unknown-linux-musleabi:0.2.5
 	{{clean}} && docker image rm ghcr.io/cross-rs/arm-unknown-linux-musleabihf:0.2.5
 	{{clean}} && docker image rm ghcr.io/cross-rs/armv5te-unknown-linux-musleabi:0.2.5
