@@ -46,9 +46,9 @@ jobs:
     - name: Build Musl binary
       run: just build-release-binary
     - name: Build other binaryies
-      run: just binaries
+      run: just binaries true
     - name: Generate artifacts
-      run: just cp-binaries true
+      run: just cp-binaries
     - uses: actions/upload-artifact@v3
       with:
         name: binaries
