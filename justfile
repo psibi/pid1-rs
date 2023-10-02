@@ -13,6 +13,7 @@ test: build-release-binary
 
 # Test docker image
 test-init-image:
+	#!/usr/bin/env bash
 	docker run --rm --cpus 1 --name pid pid1runner ps aux
 	docker run --rm --cpus 1 --name pid pid1runner ls
 	docker run --rm --cpus 1 --name pid pid1runner ls /
