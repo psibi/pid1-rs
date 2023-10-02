@@ -53,8 +53,11 @@ jobs:
     - name: Run tests
       run: |
         just test
-        bash -c "just test-init-image"
         cd pid1 && just test
+      if: runner.os == 'Linux'
+    - name: pid1 Image tests
+      run: |
+        just test-init-image
       if: runner.os == 'Linux'
     - name: clippy
       run: cargo clippy -- --deny "warnings"
