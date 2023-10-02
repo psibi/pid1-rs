@@ -14,12 +14,18 @@ test: build-release-binary
 # Test docker image
 test-init-image:
 	#!/usr/bin/env bash
-	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name pid pid1runner ps aux
+	docker run --rm--cpus 1 --memory 512MB --stop-timeout 2 --tty --name=pid pid1runner ps aux
+	-docker wait pid
 	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name pid pid1runner ls
+	-docker wait pid
 	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name pid pid1runner ls /
+	-docker wait pid
 	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name pid pid1runner id
+	-docker wait pid
 	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name pid pid1runner --workdir=/home  pwd
+	-docker wait pid
 	docker run --rm --cpus 1 --memory 512MB --stop-timeout 2 --tty --name pid pid1runner --env HELLO=WORLD --env=FOO=BYE printenv HELLO FOO
+	-docker wait pid
 
 # Exec init image
 exec-init-image:
